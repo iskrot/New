@@ -1,47 +1,57 @@
 public class Main {
     public static void main(String[] args) {
-        var dog = 8.0;
-        var cat = 3.6;
-        var paper =763789;
-        System.out.println(dog);
-        System.out.println(cat);
-        System.out.println(paper);
-        dog = dog+ 4;
-        cat = cat+ 4;
-        paper += 4;
-        System.out.println(dog);
-        System.out.println(cat);
-        System.out.println(paper);
-        dog = dog-3.5;
-        cat = cat-1.6;
-        paper -= 7639;
-        System.out.println(dog);
-        System.out.println(cat);
-        System.out.println(paper);
-        var friend = 19;
-        System.out.println(friend);
-        friend += 2;
-        System.out.println(friend);
-        friend /= 7;
-        System.out.println(friend);
-        var frog = 3.5;
-        System.out.println(frog);
-        frog *= 10;
-        System.out.println(frog);
-        frog += 4;
-        System.out.println(frog);
-        var men1 = 78.2;
-        var men2 = 82.7;
-        System.out.println(men1 + men2);
-        System.out.println(men2 - men1);
-        System.out.println((men1 + men2) % (men2 - men1));
-        var time = 640;
-        var timework = 8;
-        var workers = time / timework;
-        System.out.println("Всего работников в компании — " +workers + " человек.");
-        workers += 94;
-        time = timework * workers;
-        System.out.println("Если в компании работает " +workers + " человек, то всего " +time + " часов работы может быть поделено между сотрудниками.");
+        boolean userOS = false;
+        if (userOS) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        }
 
+        short clientDeviceYear = 2015;
+        if (clientDeviceYear < 2015 && userOS) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else if (!userOS && clientDeviceYear < 2015) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        }
+
+        short data = 2100;
+        if (data % 4 == 0 && (!(data % 100 == 0) || data % 400 == 0)) {
+            System.out.println(data + " год является високосным");
+        } else {
+            System.out.println(data + " год не является високосным");
+        }
+
+        short deliveryDistance = 95;
+        if (deliveryDistance < 20) {
+            System.out.println("Потребуется дней: 1");
+        } else if (deliveryDistance <= 60) {
+            System.out.println("Потребуется дней: 2");
+        } else if (deliveryDistance <= 100) {
+            System.out.println("Потребуется дней: 3");
+        } else {
+            System.out.println("Доставки нет");
+        }
+
+        byte monthNumber = 1;
+        switch (monthNumber) {
+            case 1, 2, 12: {
+                System.out.println("Зима");
+                break;
+            }
+
+            case 3, 4, 5: {
+                System.out.println("Весна");
+                break;
+            }
+            case 6, 7, 8: {
+                System.out.println("Лето");
+                break;
+            }
+            case 9, 11, 10: {
+                System.out.println("Осень");
+                break;
+            }
+
+        }
     }
 }
