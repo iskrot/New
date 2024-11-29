@@ -41,7 +41,7 @@ public class Main {
         System.out.println("Всего работников в компании — " +workers + " человек.");
         workers += 94;
         time = timework * workers;
-        System.out.println( "Если в компании работает " +workers + " человек, то всего " +time + " часов работы может быть поделено между сотрудниками.");
+        System.out.println("Если в компании работает " +workers + " человек, то всего " +time + " часов работы может быть поделено между сотрудниками.");
 
     }
 }
