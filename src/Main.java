@@ -1,24 +1,24 @@
 public class Main {
     public static void main(String[] args) {
-        boolean userOS = false;
-        if (userOS) {
+        boolean clientOS = false;
+        if (clientOS) {
             System.out.println("Установите версию приложения для Android по ссылке");
         } else {
             System.out.println("Установите версию приложения для iOS по ссылке");
         }
 
         short clientDeviceYear = 2015;
-        if (clientDeviceYear < 2015 && userOS) {
+        if (clientDeviceYear < 2015 && clientOS) {
             System.out.println("Установите версию приложения для Android по ссылке");
-        } else if (!userOS && clientDeviceYear < 2015) {
+        } else if (!clientOS && clientDeviceYear < 2015) {
             System.out.println("Установите версию приложения для iOS по ссылке");
         }
 
-        short data = 2100;
-        if (data % 4 == 0 && (!(data % 100 == 0) || data % 400 == 0)) {
-            System.out.println(data + " год является високосным");
+        short year = 2100;
+        if (year % 4 == 0 && (!(year % 100 == 0) || year % 400 == 0)) {
+            System.out.println(year + " год является високосным");
         } else {
-            System.out.println(data + " год не является високосным");
+            System.out.println(year + " год не является високосным");
         }
 
         short deliveryDistance = 95;
@@ -34,23 +34,25 @@ public class Main {
 
         byte monthNumber = 1;
         switch (monthNumber) {
-            case 1, 2, 12: {
+            case 1, 2, 12:
                 System.out.println("Зима");
                 break;
-            }
 
-            case 3, 4, 5: {
+
+            case 3, 4, 5:
                 System.out.println("Весна");
                 break;
-            }
-            case 6, 7, 8: {
+
+            case 6, 7, 8:
                 System.out.println("Лето");
                 break;
-            }
-            case 9, 11, 10: {
+
+            case 9, 11, 10:
                 System.out.println("Осень");
                 break;
-            }
+
+
+        }
 
         }
     }
