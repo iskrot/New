@@ -9,8 +9,9 @@ public class Main {
             System.out.println(i);
         }
 
-        for (byte i = 0; i < 17; i += 2) {
-            System.out.println(i);
+        for (byte i = 0; i < 17; i++) {
+            if (i % 2 == 0)
+                System.out.println(i);
         }
 
         for (byte i = 10; i > -11; i--) {
@@ -33,14 +34,19 @@ public class Main {
         float money = 0;
         for (byte i = 1; i <= 12; i++) {
             money += 29000;
-            System.out.println(" Месяц "+i+", сумма накоплений равна " + money + " рублей");
+            System.out.println(" Месяц " + i + ", сумма накоплений равна " + money + " рублей");
         }
 
         for (byte i = 1; i <= 12; i++) {
             money *= 1.12;
             money += 29000;
-            System.out.println(" Месяц "+i+", сумма накоплений равна " + money + " рублей");
+            System.out.println(" Месяц " + i + ", сумма накоплений равна " + money + " рублей");
         }
+
+        for (byte i = 1; i <= 10; i++) {
+            System.out.println("2*" + i + "=" + 2 * i);
+        }
+
 
     }
 }
