@@ -1,47 +1,53 @@
 public class Main {
     public static void main(String[] args) {
-        var dog = 8.0;
-        var cat = 3.6;
-        var paper =763789;
-        System.out.println(dog);
-        System.out.println(cat);
-        System.out.println(paper);
-        dog = dog+ 4;
-        cat = cat+ 4;
-        paper += 4;
-        System.out.println(dog);
-        System.out.println(cat);
-        System.out.println(paper);
-        dog = dog-3.5;
-        cat = cat-1.6;
-        paper -= 7639;
-        System.out.println(dog);
-        System.out.println(cat);
-        System.out.println(paper);
-        var friend = 19;
-        System.out.println(friend);
-        friend += 2;
-        System.out.println(friend);
-        friend /= 7;
-        System.out.println(friend);
-        var frog = 3.5;
-        System.out.println(frog);
-        frog *= 10;
-        System.out.println(frog);
-        frog += 4;
-        System.out.println(frog);
-        var men1 = 78.2;
-        var men2 = 82.7;
-        System.out.println(men1 + men2);
-        System.out.println(men2 - men1);
-        System.out.println((men1 + men2) % (men2 - men1));
-        var time = 640;
-        var timework = 8;
-        var workers = time / timework;
-        System.out.println("Всего работников в компании — " +workers + " человек.");
-        workers += 94;
-        time = timework * workers;
-        System.out.println( "Если в компании работает " +workers + " человек, то всего " +time + " часов работы может быть поделено между сотрудниками.");
+
+        for (byte i = 1; i < 11; i++) {
+            System.out.println(i);
+        }
+
+        for (byte i = 10; i > 0; i--) {
+            System.out.println(i);
+        }
+
+        for (byte i = 0; i < 17; i++) {
+            if (i % 2 == 0)
+                System.out.println(i);
+        }
+
+        for (byte i = 10; i > -11; i--) {
+            System.out.println(i);
+        }
+
+        for (short i = 1904; i < 2096; i++) {
+            if (i % 4 == 0 && (i % 100 != 0 || i % 400 == 0)) {
+                System.out.println(i + " год является високосным");
+            }
+        }
+
+        for (byte i = 7; i <= 98; i += 7) {
+            System.out.println(i);
+        }
+
+        for (short i = 1; i <= 512; i += i) {
+            System.out.println(i);
+        }
+        float money = 0;
+        for (byte i = 1; i <= 12; i++) {
+            money += 29000;
+            System.out.println(" Месяц "+i+", сумма накоплений равна " + money + " рублей");
+        }
+
+        for (byte i = 1; i <= 12; i++) {
+            money *= 1.12;
+            money += 29000;
+            System.out.println(" Месяц "+i+", сумма накоплений равна " + money + " рублей");
+        }
+
+
+        for (byte i = 1; i <= 10; i++) {
+            System.out.println("2*" + i + "=" + 2 * i);
+        }
+
 
     }
 }
