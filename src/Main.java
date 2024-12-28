@@ -7,18 +7,22 @@ public class Main {
             money += 15_000;
             System.out.println("Месяц " + month + ", сумма накоплений равна " + money + " рублей");
         }
-
-        for (byte i = 1; i <= 10; i++) {
-            System.out.print(i + " ");
+        byte y = 1;
+        while (y <= 10 ) {
+            y++;
+            System.out.print(y + " ");
         }
         System.out.println();
         for (byte i = 10; i >= 1; i--) {
             System.out.print(i + " ");
         }
+        System.out.println();
 
         int population = 17_000_000;
+        byte birth = 17;
+        byte mortality = 8;
         for (byte i = 1; i <= 10; i++) {
-            population += (17 - 8) * (population % 1000);
+            population += (birth - mortality) * (population / 1000);
             System.out.println("Год " + i + ", численность населения составляет " + population);
         }
         money = 15_000;
@@ -43,8 +47,9 @@ public class Main {
         while (month <= 9 * 12) {
             month++;
             money *= 1.07;
-            if (month % 6 == 0)
+            if (month % 6 == 0){
                 System.out.println("Месяц " + month + ", сумма накоплений равна " + money + " рублей");
+            }
         }
 
         int friday = 1;
@@ -54,12 +59,16 @@ public class Main {
             }
         }
 
-        short year = 0;
-        do {
-            year += 79;
-            if (year > 2024 - 200) {
-                System.out.println(year);
+        short endYear = 2124;
+        short realYear = 2024;
+        short startYear = 0;
+
+        while (startYear < endYear){
+
+            if (startYear>realYear-200){
+                System.out.println(startYear);
             }
-        } while (year < 2024);
+            startYear += 79;
+        }
     }
 }
