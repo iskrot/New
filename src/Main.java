@@ -18,7 +18,7 @@ public class Main {
         }
         System.out.println();
         System.out.print(c[0]);
-        for (byte i = 0; i <= 2;i++ ){
+        for (byte i = 1; i <= 2;i++ ){
             System.out.print(","+c[i]);
         }
         System.out.println();
@@ -29,17 +29,17 @@ public class Main {
         }
         System.out.println();
         System.out.print(b[2]);
-        for (byte i = 0; i <= 2;i++ ){
+        for (byte i = 1; i <= 2;i++ ){
             System.out.print(","+b[b.length-i-1]);
         }
         System.out.println();
         System.out.print(c[2]);
-        for (byte i = 0; i <= 2;i++ ){
+        for (byte i = 1; i <= 2;i++ ){
             System.out.print(","+c[c.length-i-1]);
         }
         System.out.println();
 
-        for (byte i = 0; i < a.length; i++){
+        for (byte i = 1; i < a.length; i++){
             if (a[i]%2!=0){
                 a[i] += 1;
             }
