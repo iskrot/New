@@ -39,7 +39,7 @@ public class Main {
         }
         System.out.println();
 
-        for (byte i = 1; i < a.length; i++){
+        for (byte i = 0; i < a.length; i++){
             if (a[i]%2!=0){
                 a[i] += 1;
             }
@@ -48,5 +48,6 @@ public class Main {
         for (byte i = 1; i <= 2;i++ ){
             System.out.print(","+a[i]);
         }
+
     }
 }
