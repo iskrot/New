@@ -19,7 +19,7 @@ public class Main {
         }
         System.out.println("Минимальная сумма трат за неделю составила " + minCosts + " рублей. Максимальная сумма трат за неделю составила " + maxConts + " рублей");
 
-        short averageWaste = (short) (maxConts / 5);
+        short averageWaste = (short) (monthlyExpenses / 5);
         System.out.println("Средняя сумма трат за месяц составила " + averageWaste + " рублей");
 
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
