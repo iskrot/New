@@ -1,47 +1,54 @@
+import java.time.LocalDate;
+
+// Установите версию приложения для Android по ссылке
+
 public class Main {
     public static void main(String[] args) {
-        var dog = 8.0;
-        var cat = 3.6;
-        var paper =763789;
-        System.out.println(dog);
-        System.out.println(cat);
-        System.out.println(paper);
-        dog = dog+ 4;
-        cat = cat+ 4;
-        paper += 4;
-        System.out.println(dog);
-        System.out.println(cat);
-        System.out.println(paper);
-        dog = dog-3.5;
-        cat = cat-1.6;
-        paper -= 7639;
-        System.out.println(dog);
-        System.out.println(cat);
-        System.out.println(paper);
-        var friend = 19;
-        System.out.println(friend);
-        friend += 2;
-        System.out.println(friend);
-        friend /= 7;
-        System.out.println(friend);
-        var frog = 3.5;
-        System.out.println(frog);
-        frog *= 10;
-        System.out.println(frog);
-        frog += 4;
-        System.out.println(frog);
-        var men1 = 78.2;
-        var men2 = 82.7;
-        System.out.println(men1 + men2);
-        System.out.println(men2 - men1);
-        System.out.println((men1 + men2) % (men2 - men1));
-        var time = 640;
-        var timework = 8;
-        var workers = time / timework;
-        System.out.println("Всего работников в компании — " +workers + " человек.");
-        workers += 94;
-        time = timework * workers;
-        System.out.println( "Если в компании работает " +workers + " человек, то всего " +time + " часов работы может быть поделено между сотрудниками.");
+        int year = 2000;
+        if (leapYear(year)) {
+            System.out.println(year + " год — високосный год");
+        } else {
+            System.out.println(year + " год — невисокосный год");
+        }
+
+        boolean clientOS = true;
+        int clientDeviceYear = 2000;
+        System.out.println(operator(clientOS, clientDeviceYear));
+
+        int deliveryDistance = 30;
+        if (deliveryTime(deliveryDistance) == 4) {
+            System.out.println("Доставки нет");
+        } else {
+            System.out.println("Потребуется дней: " + deliveryTime(deliveryDistance));
+        }
+    }
+
+    public static boolean leapYear(int year) {
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public static String operator(boolean clientOS, int clientDeviceYear) {
+        int currentYear = LocalDate.now().getYear();
+        if (clientDeviceYear < currentYear && clientOS) {
+            return "Установите версию приложения для Android по ссылке";
+        } else if (!clientOS && clientDeviceYear < currentYear) {
+            return "Установите версию приложения для iOS по ссылке";
+        }
+        return null;
+    }
+
+    public static byte deliveryTime(int deliveryDistance) {
+        if (deliveryDistance < 20) {
+            return 1;
+        } else if (deliveryDistance <= 60) {
+            return 2;
+        } else if (deliveryDistance <= 100) {
+            return 3;
+        }
+        return 4;
 
     }
 }
