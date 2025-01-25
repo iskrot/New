@@ -13,7 +13,9 @@ public class Main {
 
         boolean clientOS = true;
         int clientDeviceYear = 2000;
-        System.out.println(operator(clientOS, clientDeviceYear));
+        if (operator(clientOS, clientDeviceYear) != null){
+            System.out.println(operator(clientOS, clientDeviceYear));
+        }
 
         int deliveryDistance = 30;
         if (deliveryTime(deliveryDistance) == 4) {
@@ -31,7 +33,7 @@ public class Main {
     }
 
     public static String operator(boolean clientOS, int clientDeviceYear) {
-        int currentYear = LocalDate.now().getYear();
+        int currentYear = 2015;
         if (clientDeviceYear < currentYear && clientOS) {
             return "Установите версию приложения для Android по ссылке";
         } else if (!clientOS && clientDeviceYear < currentYear) {
