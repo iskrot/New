@@ -1,7 +1,8 @@
 import java.util.Objects;
 
 public class Employee {
-    private byte id;
+    static int counterId = 0;
+    private int id;
     private String name;
     private String surName;
     private String fatherName;
@@ -12,13 +13,14 @@ public class Employee {
 
     }
 
-    public Employee(byte id, String name, String surName, String fatherName, int salary, byte department) {
-        this.id = id;
+    public Employee(String name, String surName, String fatherName, int salary, byte department) {
+        this.id = counterId;
         this.name = name;
         this.surName = surName;
         this.fatherName = fatherName;
         this.salary = salary;
         this.department = department;
+        Employee.counterId ++;
     }
 
     @Override
