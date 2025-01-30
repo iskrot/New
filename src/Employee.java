@@ -20,17 +20,17 @@ public class Employee {
         this.fatherName = fatherName;
         this.salary = salary;
         this.department = department;
-        Employee.counterId ++;
+        Employee.counterId++;
     }
 
     @Override
     public String toString() {
-        return "Employee{name: " + name + " surName: " + surName + " fatherName: " + fatherName + " salary: " + salary +
+        return "Employee{id: " + id + " name: " + name + " surName: " + surName + " fatherName: " + fatherName + " salary: " + salary +
                 " department: " + department +
                 '}';
     }
 
-    public byte getId() {
+    public int getId() {
         return id;
     }
 
