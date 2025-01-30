@@ -17,12 +17,11 @@ public class Main {
         System.out.println(maxSalary(employees));
         System.out.println(middleSalary(employees));
         printFioEmployees(employees);
-        System.out.println(fasteForSalaryDepartment(employees, (byte) department));
-        System.out.println(minSalaryDepartment(employees),department);
-        System.out.println(maxSalaryDepartment(employees),department);
-        System.out.println(middleSalaryDepartment(employees),department);
-        printFioEmployeesDepartment(employees,department);
-
+        System.out.println(fasteForSalaryDepartment(employees, (byte) 1));
+        System.out.println(minSalaryDepartment(employees, (byte) 1));
+        System.out.println(maxSalaryDepartment(employees, (byte) 1));
+        System.out.println(middleSalaryDepartment(employees, (byte) 1));
+        printFioEmployeesDepartment(employees, (byte) 1);
 
 
     }
@@ -67,17 +66,17 @@ public class Main {
         return fasteForSalary(employees) / employees.length;
     }
 
-    public static void printFioEmployees(Employee[] employees){
+    public static void printFioEmployees(Employee[] employees) {
         String string = "";
         for (int i = 0; i < employees.length; i++) {
-            string += employees[i].getSurName()+" "+employees[i].getName()+" "+employees[i].getFatherName()+" \n";
+            string += employees[i].getSurName() + " " + employees[i].getName() + " " + employees[i].getFatherName() + " \n";
         }
         System.out.println(string);
 
     }
 
-    public static void salaryUp(Employee[] employees){
-        for (int i = 0; i < employees.length; i++){
+    public static void salaryUp(Employee[] employees) {
+        for (int i = 0; i < employees.length; i++) {
             employees[i].setSalary((int) (employees[i].getSalary() * 1.1));
         }
     }
@@ -85,7 +84,7 @@ public class Main {
     public static int fasteForSalaryDepartment(Employee[] employees, byte department) {
         int faste = 0;
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getDepartment() == department){
+            if (employees[i].getDepartment() == department) {
 
                 faste += employees[i].getSalary();
             }
@@ -96,7 +95,7 @@ public class Main {
     public static Employee minSalaryDepartment(Employee[] employees, byte department) {
         Employee b = new Employee();
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getDepartment() == department){
+            if (employees[i].getDepartment() == department) {
                 if (employees[i].getSalary() < b.getSalary() || b.getSalary() == 0) {
                     b = employees[i];
                 }
@@ -108,7 +107,7 @@ public class Main {
     public static Employee maxSalaryDepartment(Employee[] employees, byte department) {
         Employee b = new Employee();
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getDepartment() == department){
+            if (employees[i].getDepartment() == department) {
                 if (employees[i].getSalary() > b.getSalary()) {
                     b = employees[i];
                 }
@@ -118,16 +117,45 @@ public class Main {
     }
 
     public static float middleSalaryDepartment(Employee[] employees, byte department) {
-        return fasteForSalaryDepartment(employees, department) / employees.length;
+        int y = 0;
+        for (int i = 0; i<employees.length; i++){
+            if (employees[i].getDepartment() == department){
+                y++;
+            }
+        }
+
+        return fasteForSalaryDepartment(employees, department) / y;
     }
 
-    public static void printFioEmployeesDepartment(Employee[] employees, byte department){
+    public static void printFioEmployeesDepartment(Employee[] employees, byte department) {
         String string = "";
         for (int i = 0; i < employees.length; i++) {
-            if (employees[i].getDepartment() == department){
-                string += employees[i].getSurName()+" "+employees[i].getName()+" "+employees[i].getFatherName()+" \n";
+            if (employees[i].getDepartment() == department) {
+                string += employees[i].getSurName() + " " + employees[i].getName() + " " + employees[i].getFatherName() + " \n";
             }
         }
         System.out.println(string);
     }
+
+    public static void startingSalaryLevel(Employee[] employees,int startingSalary){
+        String string = "";
+        for (int i = 0; i < employees.length; i++){
+            if (employees[i].getSalary() <startingSalary){
+                string += employees[i].toString() + " \n";
+            }
+        }
+        System.out.println(string);
+    }
+
+    public static void endingSalaryLevel(Employee[] employees,int endingSalary){
+        String string = "";
+        for (int i = 0; i < employees.length; i++){
+            if (employees[i].getSalary() > endingSalary){
+                string += employees[i].toString() + " \n";
+            }
+        }
+        System.out.println(string);
+    }
+
+
 }
