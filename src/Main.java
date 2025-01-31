@@ -9,7 +9,7 @@ public class Main {
         float department = 1;
         for (byte i = 0; i < 10; i++) {
             employees.add(new Employee(randomName[(byte) (Math.random() * 4)], randomSurName[(byte) (Math.random() * 4)], randomFatherName[(byte) (Math.random() * 4)], (int) (40_000 + 60_000 * Math.random()), (byte) department));
-            department += 0.5;
+            department += 0.5f;
         }
 
         System.out.println(employees.fasteForSalary());
