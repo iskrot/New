@@ -12,15 +12,13 @@ public class Main {
             department += 0.5;
         }
 
-        System.out.println(employees.toString());
         System.out.println(employees.fasteForSalary());
-        System.out.println(employees.minSalary());
-        System.out.println(employees.maxSalary());
+        System.out.println(employees.searchMinSalary());
+        System.out.println(employees.searchMaxSalary());
         System.out.println(employees.middleSalary());
         employees.printFioEmployees();
-        System.out.println(employees.fasteForSalaryDepartment((byte) 1));
-        System.out.println(employees.minSalaryDepartment((byte) 1));
-        System.out.println(employees.maxSalaryDepartment((byte) 1));
+        System.out.println(employees.searchMinSalaryDepartment((byte) 1));
+        System.out.println(employees.searchMaxSalaryDepartment((byte) 1));
         System.out.println(employees.middleSalaryDepartment((byte) 1));
         employees.printFioEmployeesDepartment((byte) 1);
 

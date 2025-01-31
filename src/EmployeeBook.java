@@ -15,7 +15,7 @@ public class EmployeeBook {
         }return false;
     }
 
-    public String toString() {
+    public String printEmployeeInfo() {
         String string = "";
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] != null){
@@ -33,7 +33,7 @@ public class EmployeeBook {
         return faste;
     }
 
-    public Employee minSalary() {
+    public Employee searchMinSalary() {
         Employee b = new Employee();
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() < b.getSalary() || b.getSalary() == 0) {
@@ -43,7 +43,7 @@ public class EmployeeBook {
         return b;
     }
 
-    public Employee maxSalary() {
+    public Employee searchMaxSalary() {
         Employee b = new Employee();
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getSalary() > b.getSalary()) {
@@ -54,7 +54,17 @@ public class EmployeeBook {
     }
 
     public float middleSalary() {
-        return fasteForSalary() / employees.length;
+        int x = 0;
+        for (int i = 0; i < employees.length; i++){
+            if (employees[i] != null){
+                x++;
+            }
+        }
+        if (x != 0){
+            return fasteForSalary() / x  ;
+        }else{
+            return 0;
+        }
     }
 
     public void printFioEmployees() {
@@ -83,7 +93,7 @@ public class EmployeeBook {
         return faste;
     }
 
-    public Employee minSalaryDepartment(byte department) {
+    public Employee searchMinSalaryDepartment(byte department) {
         Employee b = new Employee();
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getDepartment() == department) {
@@ -95,7 +105,7 @@ public class EmployeeBook {
         return b;
     }
 
-    public Employee maxSalaryDepartment(byte department) {
+    public Employee searchMaxSalaryDepartment(byte department) {
         Employee b = new Employee();
         for (int i = 0; i < employees.length; i++) {
             if (employees[i].getDepartment() == department) {
