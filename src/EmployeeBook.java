@@ -25,7 +25,7 @@ public class EmployeeBook {
         return string.toString();
     }
 
-    public int fasteForSalary() {
+    public int fasterForSalary() {
         int faste = 0;
         for (Employee employee : employees) {
             if (employee != null){
@@ -67,7 +67,7 @@ public class EmployeeBook {
             }
         }
         if (x != 0){
-            return (float) fasteForSalary() / x  ;
+            return (float) fasterForSalary() / x  ;
         }else{
             return 0;
         }

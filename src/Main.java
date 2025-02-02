@@ -12,7 +12,7 @@ public class Main {
             department += 0.5f;
         }
 
-        System.out.println(employees.fasteForSalary());
+        System.out.println(employees.fasterForSalary());
         System.out.println(employees.searchMinSalary());
         System.out.println(employees.searchMaxSalary());
         System.out.println(employees.getMiddleSalary());
@@ -25,7 +25,7 @@ public class Main {
         employees.delete(1);
         System.out.println(employees.printEmployeeInfo());
         System.out.println(employees.idSearch(4));
-
+        employees.salaryUp(0.10f);
     }
 
 }
