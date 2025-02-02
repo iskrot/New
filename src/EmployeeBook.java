@@ -28,7 +28,9 @@ public class EmployeeBook {
     public int fasteForSalary() {
         int faste = 0;
         for (Employee employee : employees) {
-            faste += employee.getSalary();
+            if (employee != null){
+                faste += employee.getSalary();
+            }
         }
         return faste;
     }
@@ -36,8 +38,10 @@ public class EmployeeBook {
     public Employee searchMinSalary() {
         Employee b = new Employee();
         for (Employee employee : employees) {
-            if (employee.getSalary() < b.getSalary() || b.getSalary() == 0) {
-                b = employee;
+            if (employee != null){
+                if (employee.getSalary() < b.getSalary() || b.getSalary() == 0) {
+                    b = employee;
+                }
             }
         }
         return b;
@@ -46,14 +50,16 @@ public class EmployeeBook {
     public Employee searchMaxSalary() {
         Employee b = new Employee();
         for (Employee employee : employees) {
-            if (employee.getSalary() > b.getSalary()) {
-                b = employee;
+            if (employee != null){
+                if (employee.getSalary() > b.getSalary()) {
+                    b = employee;
+                }
             }
         }
         return b;
     }
 
-    public float middleSalary() {
+    public float getMiddleSalary() {
         int x = 0;
         for (Employee employee : employees) {
             if (employee != null) {
@@ -70,24 +76,27 @@ public class EmployeeBook {
     public void printFioEmployees() {
         StringBuilder string = new StringBuilder();
         for (Employee employee : employees) {
-            string.append(employee.getSurName()).append(" ").append(employee.getName()).append(" ").append(employee.getFatherName()).append(" \n");
+            if (employee != null){
+                string.append(employee.getSurName()).append(" ").append(employee.getName()).append(" ").append(employee.getFatherName()).append(" \n");
+            }
         }
         System.out.println(string);
 
     }
 
-    public void salaryUp() {
+    public void salaryUp(float increase) {
         for (Employee employee : employees) {
-            employee.setSalary((int) (employee.getSalary() * 1.1));
+            employee.setSalary((int) (employee.getSalary() * increase));
         }
     }
 
     public int fasteForSalaryDepartment(byte department) {
         int faste = 0;
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-
-                faste += employee.getSalary();
+            if (employee != null){
+                if (employee.getDepartment() == department) {
+                    faste += employee.getSalary();
+                }
             }
         }
         return faste;
@@ -96,9 +105,12 @@ public class EmployeeBook {
     public Employee searchMinSalaryDepartment(byte department) {
         Employee b = new Employee();
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                if (employee.getSalary() < b.getSalary() || b.getSalary() == 0) {
-                    b = employee;
+            if (employee != null){
+
+                if (employee.getDepartment() == department) {
+                    if (employee.getSalary() < b.getSalary() || b.getSalary() == 0) {
+                        b = employee;
+                    }
                 }
             }
         }
@@ -108,20 +120,26 @@ public class EmployeeBook {
     public Employee searchMaxSalaryDepartment(byte department) {
         Employee b = new Employee();
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                if (employee.getSalary() > b.getSalary()) {
-                    b = employee;
+            if (employee != null){
+
+                if (employee.getDepartment() == department) {
+                    if (employee.getSalary() > b.getSalary()) {
+                        b = employee;
+                    }
                 }
             }
         }
         return b;
     }
 
-    public float middleSalaryDepartment(byte department) {
+    public float getMiddleSalaryDepartment(byte department) {
         int y = 0;
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                y++;
+            if (employee != null){
+
+                if (employee.getDepartment() == department) {
+                    y++;
+                }
             }
         }
 
@@ -131,8 +149,11 @@ public class EmployeeBook {
     public void printFioEmployeesDepartment(byte department) {
         StringBuilder string = new StringBuilder();
         for (Employee employee : employees) {
-            if (employee.getDepartment() == department) {
-                string.append(employee.getSurName()).append(" ").append(employee.getName()).append(" ").append(employee.getFatherName()).append(" \n");
+            if (employee != null){
+
+                if (employee.getDepartment() == department) {
+                    string.append(employee.getSurName()).append(" ").append(employee.getName()).append(" ").append(employee.getFatherName()).append(" \n");
+                }
             }
         }
         System.out.println(string);
@@ -141,8 +162,10 @@ public class EmployeeBook {
     public void startingSalaryLevel(int startingSalary) {
         StringBuilder string = new StringBuilder();
         for (Employee employee : employees) {
-            if (employee.getSalary() < startingSalary) {
-                string.append(employee.toString()).append(" \n");
+            if (employee != null){
+                if (employee.getSalary() < startingSalary) {
+                    string.append(employee.toString()).append(" \n");
+                }
             }
         }
         System.out.println(string);
@@ -151,8 +174,10 @@ public class EmployeeBook {
     public void endingSalaryLevel(int endingSalary) {
         StringBuilder string = new StringBuilder();
         for (Employee employee : employees) {
-            if (employee.getSalary() > endingSalary) {
-                string.append(employee.toString()).append(" \n");
+            if (employee != null){
+                if (employee.getSalary() > endingSalary) {
+                    string.append(employee.toString()).append(" \n");
+                }
             }
         }
         System.out.println(string);

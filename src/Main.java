@@ -15,15 +15,15 @@ public class Main {
         System.out.println(employees.fasteForSalary());
         System.out.println(employees.searchMinSalary());
         System.out.println(employees.searchMaxSalary());
-        System.out.println(employees.middleSalary());
+        System.out.println(employees.getMiddleSalary());
         employees.printFioEmployees();
         System.out.println(employees.searchMinSalaryDepartment((byte) 1));
         System.out.println(employees.searchMaxSalaryDepartment((byte) 1));
-        System.out.println(employees.middleSalaryDepartment((byte) 1));
+        System.out.println(employees.getMiddleSalaryDepartment((byte) 1));
         employees.printFioEmployeesDepartment((byte) 1);
 
         employees.delete(1);
-        System.out.println(employees.toString());
+        System.out.println(employees.printEmployeeInfo());
         System.out.println(employees.idSearch(4));
 
     }
